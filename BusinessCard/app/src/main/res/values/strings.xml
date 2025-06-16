@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BusinessCard</string>
+    <string name="card_name">Andrew Kien</string>
+    <string name="role">Mobile Developer</string>
+    <string name="phone">+84 0987654321</string>
+    <string name="account">@AndrewKien</string>
+    <string name="mail">andrewkien@gmail.com</string>
+</resources>
