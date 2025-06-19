@@ -5,7 +5,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,8 +19,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -26,8 +33,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
@@ -36,6 +47,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.artspace.ui.theme.ArtSpaceTheme
+import java.nio.file.WatchEvent
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -61,7 +73,7 @@ fun ArtSpaceScreen(name: String, modifier: Modifier = Modifier) {
     val player = players[currentIdx]
     val screenHeight = LocalConfiguration.current.screenHeightDp
     val imgHeight = screenHeight * 0.7f
-
+    val shape = RoundedCornerShape(16.dp)
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -69,32 +81,52 @@ fun ArtSpaceScreen(name: String, modifier: Modifier = Modifier) {
             .safeDrawingPadding(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = painterResource(player.imgResId),
-            contentDescription = "",
-            modifier = Modifier.fillMaxWidth()
-                .height(imgHeight.dp),
-            contentScale = ContentScale.FillBounds
-        )
+        Surface(
+            modifier = modifier
+                .height(imgHeight.dp)
+                .border(
+                    border = BorderStroke(width = 1.dp, color = Color(0xFFFFEED4)),
+                    shape = RoundedCornerShape(16.dp))
+                .shadow(
+                    elevation = 10.dp,
+                    ambientColor = Color.Yellow,
+                    spotColor = Color(0xFFDA291C),
+                    shape = shape
+                )
+                .clip(shape = shape)
+                .background(color = Color.White)
+                .padding(16.dp)
+        ) {
+            Image(
+                painter = painterResource(player.imgResId),
+                contentDescription = "",
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.FillBounds
+            )
+        }
 
         Spacer(Modifier.weight(1F))
 
         Text(
             text = player.name,
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            color = colorResource(R.color.man_red),
+            style = MaterialTheme.typography.headlineMedium
         )
 
         Text(
             text = player.years,
-            fontSize = 18.sp,
-            fontWeight = FontWeight.Normal,
-            modifier = Modifier.padding(top = 8.dp)
+            modifier = Modifier.padding(top = 8.dp),
+            color = colorResource(R.color.man_red),
+            style = MaterialTheme.typography.bodyLarge
         )
 
         Text(
             text = stringResource(R.string.total_goals, player.goals),
-            fontStyle = FontStyle.Italic
+            modifier = Modifier.padding(top = 8.dp),
+            fontStyle = FontStyle.Italic,
+            color = colorResource(R.color.man_red),
+            style = MaterialTheme.typography.bodyLarge
         )
 
         Row(
@@ -106,6 +138,10 @@ fun ArtSpaceScreen(name: String, modifier: Modifier = Modifier) {
                 onClick = {
                     currentIdx = getPreviousIndex(currentIdx)
                 },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFDA291C),
+                    contentColor = Color.White
+                ),
                 modifier = Modifier.width(130.dp)
             ) {
                 Text("Previous")
@@ -115,6 +151,10 @@ fun ArtSpaceScreen(name: String, modifier: Modifier = Modifier) {
                 onClick = {
                     currentIdx = getNextIndex(currentIdx)
                 },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFDA291C),
+                    contentColor = Color.White
+                ),
                 modifier = Modifier.width(130.dp)
             ) {
                 Text("Next")
