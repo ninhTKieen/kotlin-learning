@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Affirmation</string>
+    <string name="denis_law">Denis Law</string>
+    <string name="king_eric">King Eric</string>
+    <string name="persie">Robin Van Persie</string>
+    <string name="ronaldo">Cristiano Ronaldo</string>
+    <string name="rooney">Wayne Rooney</string>
+    <string name="ruud">Ruud Van Nistelrooy</string>
+    <string name="ryan_giggs">Ryan Giggs</string>
+    <string name="scholes">Paul Scholes</string>
+    <string name="sir_bobby">Sir Bobby Charlton</string>
+    <string name="george_best">George Best</string>
+</resources>
