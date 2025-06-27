@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Manchester United Gallery</string>
+    <string name="denis_law">Denis Law</string>
+    <string name="denis_law_description">A prolific striker and Ballon d\'Or winner, Denis Law was known for his flair, passion, and goal-scoring prowess during the 1960s.</string>
+
+    <string name="king_eric">King Eric</string>
+    <string name="king_eric_description">Eric Cantona, famously dubbed "King Eric", brought charisma and leadership to United, playing a key role in their 90s dominance.</string>
+
+    <string name="persie">Robin Van Persie</string>
+    <string name="persie_description">Van Persie joined United in 2012 and led the team to a Premier League title in his debut season with spectacular goals and consistency.</string>
+
+    <string name="ronaldo">Cristiano Ronaldo</string>
+    <string name="ronaldo_description">One of the greatest of all time, Ronaldo dazzled Old Trafford with his speed, skill, and goals before winning the Ballon d\'Or in 2008.</string>
+
+    <string name="rooney">Wayne Rooney</string>
+    <string name="rooney_description">United\’s all-time top scorer, Rooney combined power, technique, and versatility throughout his record-breaking career.</string>
+
+    <string name="ruud">Ruud Van Nistelrooy</string>
+    <string name="ruud_description">A clinical finisher, Van Nistelrooy was known for his sharp movement and deadly precision inside the box.</string>
+
+    <string name="ryan_giggs">Ryan Giggs</string>
+    <string name="ryan_giggs_description">A one-club legend, Giggs thrilled fans for over two decades with his blistering pace, dribbling, and unmatched longevity.</string>
+
+    <string name="scholes">Paul Scholes</string>
+    <string name="scholes_description">A midfield maestro, Scholes was revered for his vision, passing, and knack for scoring stunning goals from distance.</string>
+
+    <string name="sir_bobby">Sir Bobby Charlton</string>
+    <string name="sir_bobby_description">A World Cup winner and survivor of the Munich Air Disaster, Charlton became a symbol of Manchester United\'s resilience and greatness.</string>
+
+    <string name="george_best">George Best</string>
+    <string name="george_best_description">An icon of the game, Best combined dazzling skill, flair, and charisma, earning a Ballon d\'Or in 1968.</string>
+</resources>
