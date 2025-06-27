@@ -24,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -73,7 +74,7 @@ private fun PlayerItem(
     player: Player,
     modifier: Modifier = Modifier
 ) {
-    var expandable by remember { mutableStateOf(false) }
+    var expandable by rememberSaveable { mutableStateOf(false) } // keep data consistently when activity has changed
 
     Card(
         modifier = modifier
